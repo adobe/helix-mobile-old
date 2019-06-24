@@ -18,21 +18,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="![](/mclarensenna_header.jpg)   " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpC-MT-pyw">
-                                <rect key="frame" x="49" y="320" width="212" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="rLD-5Y-Fd1">
+                                <rect key="frame" x="33" y="70" width="91" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnB-cW-oI5">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="DH1-K7-Oj7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Select Mode"/>
+                                        <connections>
+                                            <action selector="handleSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZKv-pc-8kz"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNv-zH-uhl">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="HS0-Fe-4fV"/>
+                                        </constraints>
+                                        <state key="normal" title="Preview"/>
+                                        <connections>
+                                            <action selector="modeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lSa-rg-hIm"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUM-iV-Xgq">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jAc-yq-oSi"/>
+                                        </constraints>
+                                        <state key="normal" title="Edit"/>
+                                        <connections>
+                                            <action selector="modeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PTT-VE-BvQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="UnB-cW-oI5" firstAttribute="top" secondItem="rLD-5Y-Fd1" secondAttribute="top" id="9dU-Md-7RY"/>
+                                    <constraint firstItem="kNv-zH-uhl" firstAttribute="leading" secondItem="rLD-5Y-Fd1" secondAttribute="leading" id="TEM-D6-8o2"/>
+                                    <constraint firstItem="UnB-cW-oI5" firstAttribute="leading" secondItem="rLD-5Y-Fd1" secondAttribute="leading" id="qZa-jx-is3"/>
+                                    <constraint firstItem="yUM-iV-Xgq" firstAttribute="leading" secondItem="rLD-5Y-Fd1" secondAttribute="leading" id="wbt-81-8o8"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rLD-5Y-Fd1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="9zU-Ab-N6R"/>
+                            <constraint firstItem="rLD-5Y-Fd1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="Q8n-Th-bYc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="ModeButtons" destination="kNv-zH-uhl" collectionClass="NSMutableArray" id="vLI-mz-PLR"/>
+                        <outletCollection property="ModeButtons" destination="yUM-iV-Xgq" collectionClass="NSMutableArray" id="GKb-Bc-gdf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="G10-Eh-Q9v">
+            <objects>
+                <viewController id="s8x-LH-Bb4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="08f-QD-Cii">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bdw-7h-P6c"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4VB-aU-aS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061" y="134"/>
         </scene>
     </scenes>
 </document>
